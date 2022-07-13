@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mission to Mars</title>
     <link
@@ -11,21 +11,45 @@
     />
   </head>
   <body>
+    <!-- #1 setting background color-->
+    <body style="background-color: #b1bcff"></body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
+        <!-- #2 colored jumbotron font crimson -->
+        <div style="color:crimson">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Latest Mars Data</a></p>
+        </div>
       </div>
+            <!-- Quote section-->
+            <div class="card bg-danger text-white rounded-3 mb-3">
+              <div class="card-body p-4">
+                <figure class="mb-0">
+                  <blockquote class="blockquote">
+                    <p class="pb-2">
+                      “Mars tugs at the human imagination like no other planet. 
+                      With a force mightier than gravity, it attracts the eye to the shimmering red presence in the clear night sky.”
+                    </p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer mb-0 text-white">
+                    John Noble Wilford
+                  </figcaption>
+                </figure>
+              </div>
+            </div>      
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h2>Latest Mars News</h2>
-              <h4 class="media-heading">{{ mars.news_title }}</h4>
-              <p>{{ mars.news_paragraph }}</p>
+              <!-- #3 centered news -->
+              <div class="text-center">
+                <h2>Latest News on the Red Planet</h2>
+                <h4 class="media-heading">{{ mars.news_title }}</h4>
+                <p>{{ mars.news_paragraph }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -33,7 +57,7 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
-          <h2>Featured Mars Image</h2>
+          <h2>Featured Image</h2>
           <img
             src="{{mars.featured_image }}"
             class="img-responsive"
@@ -43,7 +67,8 @@
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
+            <!-- center table header -->
+            <h4>Compare Mars and Earth</h4>
             {{ mars.facts | safe }}
           </div>
         </div>
@@ -63,9 +88,6 @@
         </div>
         {% endfor %}
       </div>
-    </div>
-  </body>
-</html>
     </div>
   </body>
 </html>
